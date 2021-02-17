@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">  
+<head>    
+<!-- Required meta tags -->    
+<meta charset="utf-8">    
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">  
+<title>
+{% block title %} FaceZon {% endblock %}
+</title>  
+</head>  
+<body>
+{% block contenu %}
+{% if form.valide is defined %}     
+{% if form.valide == true %}
+<h1>Actualité ajouter</h1>
+{% endif %} 
+{% else %}
+<form action="index.php?page=Actualite"method="post"enctype="application/x-www-form-urlencoded">
+  <fieldset>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Titre</label>
+      <input type="text" class="form-control" id="Titre" aria-describedby="text" name="Titre" placeholder="Entrer un Titre">
+    </div>
+    <div class="form-group">
+      <label for="exampleTextarea">entrer votre actualité</label>
+      <textarea class="form-control" id="Textarea" name="textarea" rows="3"></textarea>
+    </div>
+    </fieldset>
+    <button type="submit" class="btn btn-primary" name="btActualite">Submit</button>
+  </fieldset>
+</form>
+{% endif %}  
+{% endblock %} 
+  
+ </body>
+ </html>
